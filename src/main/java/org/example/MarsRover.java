@@ -1,12 +1,12 @@
 package org.example;
 
 public class MarsRover {
-    private String direction;
+    private Direction direction;
     private int x;
     private int y;
 
     MarsRover() {
-        this.direction = "N";
+        this.direction = Direction.N;
         this.x = 0;
         this.y = 0;
     }
@@ -18,35 +18,34 @@ public class MarsRover {
 //    use switch case to handle turn left
     public void turnLeft() {
          switch (direction) {
-             case "N":
-                direction = "W";
+             case N:
+                direction = Direction.W;
                  break;
-            case "W":
-                direction = "S";
+            case W:
+                direction = Direction.S;
                 break;
-            case "S":
-                direction = "E";
+            case S:
+                direction = Direction.E;
                 break;
-            case "E":
-                direction = "N";
-             default:
-                 break;
+             case E:
+                direction = Direction.N;
+                break;
         }
     }
 
     public void turnRight() {
         switch (direction) {
-            case "N":
-                direction = "E";
+            case N:
+                direction = Direction.E;
                 break;
-            case "E":
-                direction = "S";
+            case E:
+                direction = Direction.S;
                 break;
-            case "S":
-                direction = "W";
+            case S:
+                direction = Direction.W;
                 break;
-            case "W":
-                direction = "N";
+            case W:
+                direction = Direction.N;
                 break;
             default:
                 break;
