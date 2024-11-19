@@ -31,7 +31,16 @@ public class MarsRover {
     }
 
     public void turnRight() {
-        direction =  "E";
+        switch (direction) {
+            case "N":
+                direction = "E";
+                break;
+            case "E":
+                direction = "S";
+                break;
+            default:
+                break;
+        }
     }
 
     public String executeCommand(String command) {
