@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class MarsRover {
     private Orientation orientation;
     private int x;
@@ -10,23 +12,14 @@ public class MarsRover {
         this.x = 0;
         this.y = 0;
     }
+    //    getter and setter for x and y
+    public int getX() { return x; }
+    public int getY() { return y; }
+    public void setX(int x) { this.x = x; }
+    public void setY(int y) { this.y = y; }
 
     public String showStatus() {
         return String.format("%d:%d:%s", x, y, orientation.getDirection());
-    }
-
-//    add getter and setter for x and y
-    public int getX() {
-        return x;
-    }
-    public int getY() {
-        return y;
-    }
-    public void setX(int x) {
-        this.x = x;
-    }
-    public void setY(int y) {
-        this.y = y;
     }
 
     public void executeCommand(String command) {
@@ -46,9 +39,7 @@ public class MarsRover {
 
     public String parseCommands(String command) {
         String[] commands = command.split(";");
-        for (String c : commands) {
-            executeCommand(c);
-        }
+        Arrays.stream(commands).forEach(this::executeCommand); //refactor using stream api
         return showStatus();
     }
 }
