@@ -3,7 +3,6 @@ package org.example;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MarsRoverTest {
     @Test
@@ -21,7 +20,7 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        String response = rover.executeCommand("L");
+        String response = rover.parseCommands("L");
         String report = rover.showStatus();
         // then
         assertEquals("0:0:W", response);
@@ -33,8 +32,8 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-       rover.executeCommand("L");
-        String response = rover.executeCommand("L");
+       rover.parseCommands("L");
+        String response = rover.parseCommands("L");
         // then
         assertEquals("0:0:S", response);
     }
@@ -44,9 +43,9 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        rover.executeCommand("L");
-        rover.executeCommand("L");
-        String response = rover.executeCommand("L");
+        rover.parseCommands("L");
+        rover.parseCommands("L");
+        String response = rover.parseCommands("L");
         // then
         assertEquals("0:0:E", response);
     }
@@ -56,10 +55,10 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        rover.executeCommand("L");
-        rover.executeCommand("L");
-        rover.executeCommand("L");
-        String response = rover.executeCommand("L");
+        rover.parseCommands("L");
+        rover.parseCommands("L");
+        rover.parseCommands("L");
+        String response = rover.parseCommands("L");
         // then
         assertEquals("0:0:N", response);
     }
@@ -69,7 +68,7 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        String response = rover.executeCommand("R");
+        String response = rover.parseCommands("R");
         // then
         assertEquals("0:0:E", response);
     }
@@ -79,8 +78,8 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        rover.executeCommand("R");
-        String response = rover.executeCommand("R");
+        rover.parseCommands("R");
+        String response = rover.parseCommands("R");
         // then
         assertEquals("0:0:S", response);
     }
@@ -90,9 +89,9 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        rover.executeCommand("R");
-        rover.executeCommand("R");
-        String response = rover.executeCommand("R");
+        rover.parseCommands("R");
+        rover.parseCommands("R");
+        String response = rover.parseCommands("R");
         // then
         assertEquals("0:0:W", response);
     }
@@ -102,8 +101,8 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        rover.executeCommand("L");
-        String response = rover.executeCommand("R");
+        rover.parseCommands("L");
+        String response = rover.parseCommands("R");
         // then
         assertEquals("0:0:N", response);
     }
@@ -114,7 +113,7 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        String response = rover.executeCommand("M");
+        String response = rover.parseCommands("M");
         // then
         assertEquals("0:1:N", response);
     }
@@ -123,9 +122,9 @@ public class MarsRoverTest {
     public void should_be_at_1_0_E_when_move_forward_when_orient_east() { //    move forward from 00E to 10E
         // given
         MarsRover rover = new MarsRover();
-        rover.executeCommand("R");
+        rover.parseCommands("R");
         // when
-        String response = rover.executeCommand("M");
+        String response = rover.parseCommands("M");
         // then
         assertEquals("1:0:E", response);
     }
@@ -134,10 +133,10 @@ public class MarsRoverTest {
     public void should_be_at_0_negative1_S_move_forward_when_orient_south() { //    move forward from 00S to 0-1S
         // given
         MarsRover rover = new MarsRover();
-        rover.executeCommand("R");
-        rover.executeCommand("R");
+        rover.parseCommands("R");
+        rover.parseCommands("R");
         // when
-        String response = rover.executeCommand("M");
+        String response = rover.parseCommands("M");
         // then
         assertEquals("0:-1:S", response);
     }
@@ -147,9 +146,9 @@ public class MarsRoverTest {
     public void should_be_at_negative1_0_W_when_move_forward_when_orient_west() { //    move forward from 00W to -10W
         // given
         MarsRover rover = new MarsRover();
-        rover.executeCommand("L");
+        rover.parseCommands("L");
         // when
-        String response = rover.executeCommand("M");
+        String response = rover.parseCommands("M");
         // then
         assertEquals("-1:0:W", response);
     }
@@ -159,7 +158,7 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        String response = rover.executeCommand("B");
+        String response = rover.parseCommands("B");
         // then
         assertEquals("0:-1:N", response);
     }
@@ -168,9 +167,9 @@ public class MarsRoverTest {
     public void should_be_at_negative1_0_E_when_move_backward_when_orient_east() { //    move backward from 00E to -10E
         // given
         MarsRover rover = new MarsRover();
-        rover.executeCommand("R");
+        rover.parseCommands("R");
         // when
-        String response = rover.executeCommand("B");
+        String response = rover.parseCommands("B");
         // then
         assertEquals("-1:0:E", response);
     }
@@ -179,10 +178,10 @@ public class MarsRoverTest {
     public void should_be_at_0_1_S_when_move_backward_when_orient_south() { //    move backward from 00S to 01S
         // given
         MarsRover rover = new MarsRover();
-        rover.executeCommand("R");
-        rover.executeCommand("R");
+        rover.parseCommands("R");
+        rover.parseCommands("R");
         // when
-        String response = rover.executeCommand("B");
+        String response = rover.parseCommands("B");
         // then
         assertEquals("0:1:S", response);
     }
@@ -191,12 +190,43 @@ public class MarsRoverTest {
     public void should_be_at_1_0_W_when_move_backward_when_orient_west() { //    move backward from 00W to 10W
         // given
         MarsRover rover = new MarsRover();
-        rover.executeCommand("L");
+        rover.parseCommands("L");
         // when
-        String response = rover.executeCommand("B");
+        String response = rover.parseCommands("B");
         // then
         assertEquals("1:0:W", response);
     }
+
+    @Test
+    public void should_face_west_and_be_at_negative1_0_when_turn_left_and_move_forward() { //    00N L;M
+        // given
+        MarsRover rover = new MarsRover();
+        // when
+        String response = rover.parseCommands("L;M");
+        // then
+        assertEquals("-1:0:W", response);
+    }
+
+    @Test
+    public void should_face_east_and_be_at_1_0_when_turn_right_and_move_forward() { //    00N R;M
+        // given
+        MarsRover rover = new MarsRover();
+        // when
+        String response = rover.parseCommands("R;M");
+        // then
+        assertEquals("1:0:E", response);
+    }
+
+    @Test
+    public void should_be_at_0_0_when_move_forward_and_then_backward() { //    00N M;B
+        // given
+        MarsRover rover = new MarsRover();
+        // when
+        String response = rover.parseCommands("M;B");
+        // then
+        assertEquals("0:0:N", response);
+    }
+
 
 
 
