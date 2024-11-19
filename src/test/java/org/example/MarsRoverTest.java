@@ -108,5 +108,17 @@ public class MarsRoverTest {
         assertEquals("0:0:N", response);
     }
 
+
+    @Test
+    public void should_move_forward_when_orient_north() { //    moveforward from 00N to 01N
+        // given
+        MarsRover rover = new MarsRover();
+        // when
+        String response = rover.executeCommand("M");
+        // then
+        assertEquals("0:1:N", response);
+    }
+
+
 }
 

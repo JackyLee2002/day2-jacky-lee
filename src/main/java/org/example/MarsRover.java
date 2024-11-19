@@ -2,13 +2,17 @@ package org.example;
 
 public class MarsRover {
     private String direction;
+    private int x;
+    private int y;
 
     MarsRover() {
         this.direction = "N";
+        this.x = 0;
+        this.y = 0;
     }
 
     public String showStatus() {
-        return "0:0:" + this.direction;
+        return String.format("%d:%d:%s", x, y, direction);
     }
 
 //    use switch case to handle turn left
@@ -49,6 +53,10 @@ public class MarsRover {
         }
     }
 
+    private void moveForward() {
+        y += 1;
+    }
+
     public String executeCommand(String command) {
         if (command.equals("L")) {
             turnLeft();
@@ -56,6 +64,9 @@ public class MarsRover {
         if (command.equals("R")) {
             turnRight();
         }
-        return "0:0:" + direction;
+        if (command.equals("M")) {
+            moveForward();
+        }
+        return showStatus();
     }
 }
