@@ -1,0 +1,7 @@
+**O**: I learnt about Test Driven Development (TDD), which impressed me with its structured approach to software development. TDD emphasizes writing tests before the actual code, ensuring that each piece of functionality is thoroughly tested from the start. This method helps in identifying issues early, leading to more reliable and maintainable code. minizing the chance of a faulty code being rolled out to production. Through practical examples of the Multiplication Table, I was able to practice writing tests first and then developing the corresponding code to pass these tests. This iterative process not only improved my coding skills but also highlighted the importance of having a robust test suite.
+
+**R**: Confident
+
+**I**: The experience of using TDD has deepened my understanding of its benefits. TDD as a valuable practice that not only ensures code quality without bloat but also promotes better design decisions. Writing tests first forced me to think about the requirements and edge cases upfront, leading to more thoughtful code. Additionally, TDD has made me appreciate the importance of having a comprehensive test suite, which serves as a safety net for future code changes and refactoring.
+
+**D**: Moving forward, I plan to integrate TDD more consistently into my development workflow. I will start by writing more tests for new features while reintroducing tests into some legacy codes. This approach will help maintain high code quality and reduce the likelihood of introducing bugs.
