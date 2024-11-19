@@ -98,7 +98,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_face_north_when_orient_west_and_turn_right() {
+    public void should_face_north_when_orient_west_and_turn_right() { //00W turn right
         // given
         MarsRover rover = new MarsRover();
         // when
@@ -128,6 +128,18 @@ public class MarsRoverTest {
         String response = rover.executeCommand("M");
         // then
         assertEquals("1:0:E", response);
+    }
+
+    @Test
+    public void should_move_forward_when_orient_south() { //    move forward from 00S to 0-1S
+        // given
+        MarsRover rover = new MarsRover();
+        rover.executeCommand("R");
+        rover.executeCommand("R");
+        // when
+        String response = rover.executeCommand("M");
+        // then
+        assertEquals("0:-1:S", response);
     }
 
 
