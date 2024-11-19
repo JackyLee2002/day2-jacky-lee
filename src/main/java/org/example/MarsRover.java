@@ -53,7 +53,22 @@ public class MarsRover {
     }
 
     private void moveForward() {
-        y += 1;
+        switch (direction) {
+            case N:
+                y++;
+                break;
+            case S:
+                y--;
+                break;
+            case E:
+                x++;
+                break;
+            case W:
+                x--;
+                break;
+            default:
+                break;
+        }
     }
 
     public String executeCommand(String command) {
