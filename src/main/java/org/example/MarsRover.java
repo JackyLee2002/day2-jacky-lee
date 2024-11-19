@@ -15,23 +15,18 @@ public class MarsRover {
         return String.format("%d:%d:%s", x, y, orientation.getDirection());
     }
 
-    private void moveForward() {
-        switch (orientation.getDirection()) {
-            case N:
-                y++;
-                break;
-            case S:
-                y--;
-                break;
-            case E:
-                x++;
-                break;
-            case W:
-                x--;
-                break;
-            default:
-                break;
-        }
+//    add getter and setter for x and y
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
+    }
+    public void setX(int x) {
+        this.x = x;
+    }
+    public void setY(int y) {
+        this.y = y;
     }
 
     public String executeCommand(String command) {
@@ -42,7 +37,7 @@ public class MarsRover {
             orientation = orientation.turnRight();
         }
         if (command.equals("M")) {
-            moveForward();
+            orientation.move(this);
         }
         return showStatus();
     }

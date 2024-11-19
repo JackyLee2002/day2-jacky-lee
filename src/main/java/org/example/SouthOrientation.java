@@ -15,4 +15,9 @@ public class SouthOrientation implements Orientation {
     public Orientation turnRight() {
         return new WestOrientation();
     }
+
+    @Override
+    public void move(MarsRover rover) {
+        rover.setY(rover.getY() - 1);
+    }
 }
