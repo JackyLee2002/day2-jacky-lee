@@ -4,5 +4,6 @@ public interface Orientation {
     Direction getDirection();
     Orientation turnLeft();
     Orientation turnRight();
-    void move(MarsRover rover);
+    void moveForward(MarsRover rover);
+    void moveBackward(MarsRover rover);
 }

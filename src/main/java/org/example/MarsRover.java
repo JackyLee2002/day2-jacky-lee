@@ -37,7 +37,10 @@ public class MarsRover {
             orientation = orientation.turnRight();
         }
         if (command.equals("M")) {
-            orientation.move(this);
+            orientation.moveForward(this);
+        }
+        if (command.equals("B")) {
+            orientation.moveBackward(this);
         }
         return showStatus();
     }

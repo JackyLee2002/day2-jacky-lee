@@ -17,7 +17,12 @@ public class EastOrientation implements Orientation {
     }
 
     @Override
-    public void move(MarsRover rover) {
+    public void moveForward(MarsRover rover) {
         rover.setX(rover.getX() + 1);
+    }
+
+    @Override
+    public void moveBackward(MarsRover rover) {
+        rover.setX(rover.getX() - 1);
     }
 }

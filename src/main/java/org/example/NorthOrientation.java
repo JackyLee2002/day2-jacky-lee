@@ -17,7 +17,12 @@ public class NorthOrientation implements Orientation{
     }
 
     @Override
-    public void move(MarsRover rover) {
+    public void moveForward(MarsRover rover) {
         rover.setY(rover.getY() + 1);
+    }
+
+    @Override
+    public void moveBackward(MarsRover rover) {
+        rover.setY(rover.getY() - 1);
     }
 }
