@@ -29,7 +29,7 @@ public class MarsRover {
         this.y = y;
     }
 
-    public String executeCommand(String command) {
+    public void executeCommand(String command) {
         if (command.equals("L")) {
             orientation = orientation.turnLeft();
         }
@@ -41,6 +41,13 @@ public class MarsRover {
         }
         if (command.equals("B")) {
             orientation.moveBackward(this);
+        }
+    }
+
+    public String parseCommands(String command) {
+        String[] commands = command.split(";");
+        for (String c : commands) {
+            executeCommand(c);
         }
         return showStatus();
     }
