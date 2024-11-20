@@ -38,7 +38,7 @@ public class MarsRover {
     }
 
     public String parseCommands(String command) {
-        String[] commands = command.split(";");
+        String[] commands = command.split("");
         Arrays.stream(commands).forEach(this::executeCommand); //refactor using stream api
         return showStatus();
     }
