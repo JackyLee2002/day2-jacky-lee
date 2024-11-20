@@ -23,17 +23,19 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if (command.equals("L")) {
-            orientation = orientation.turnLeft();
-        }
-        if (command.equals("R")) {
-            orientation = orientation.turnRight();
-        }
-        if (command.equals("M")) {
-            orientation.moveForward(this);
-        }
-        if (command.equals("B")) {
-            orientation.moveBackward(this);
+        switch (command) {
+            case "L":
+                orientation = orientation.turnLeft();
+                break;
+            case "R":
+                orientation = orientation.turnRight();
+                break;
+            case "M":
+                orientation.moveForward(this);
+                break;
+            case "B":
+                orientation.moveBackward(this);
+                break;
         }
     }
 
