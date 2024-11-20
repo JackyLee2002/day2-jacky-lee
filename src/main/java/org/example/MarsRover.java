@@ -12,7 +12,7 @@ public class MarsRover {
         this.x = 0;
         this.y = 0;
     }
-    //    getter and setter for x and y
+
     public int getX() { return x; }
     public int getY() { return y; }
     public void setX(int x) { this.x = x; }
@@ -39,7 +39,7 @@ public class MarsRover {
 
     public String parseCommands(String command) {
         String[] commands = command.split("");
-        Arrays.stream(commands).forEach(this::executeCommand); //refactor using stream api
+        Arrays.stream(commands).forEach(this::executeCommand);
         return showStatus();
     }
 }
