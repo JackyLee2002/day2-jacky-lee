@@ -1,6 +1,6 @@
 package org.example;
 
-public class NorthOrientation implements Orientation{
+public class NorthOrientation implements Orientation {
     @Override
     public Direction getDirection() {
         return Direction.N;
