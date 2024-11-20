@@ -4,22 +4,22 @@ import java.util.Arrays;
 
 public class MarsRover {
     private Orientation orientation;
-    private int x;
+    private int xCoord;
     private int y;
 
     MarsRover() {
         this.orientation = new NorthOrientation();
-        this.x = 0;
+        this.xCoord = 0;
         this.y = 0;
     }
 
-    public int getX() { return x; }
+    public int getX() { return xCoord; }
     public int getY() { return y; }
-    public void setX(int x) { this.x = x; }
+    public void setX(int xCoord) { this.xCoord = xCoord; }
     public void setY(int y) { this.y = y; }
 
     public String showStatus() {
-        return String.format("%d:%d:%s", x, y, orientation.getDirection());
+        return String.format("%d:%d:%s", xCoord, y, orientation.getDirection());
     }
 
     public void executeCommand(String command) {
