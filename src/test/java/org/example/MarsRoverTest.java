@@ -202,7 +202,7 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        String response = rover.parseCommands("L;M");
+        String response = rover.parseCommands("LM");
         // then
         assertEquals("-1:0:W", response);
     }
@@ -212,7 +212,7 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        String response = rover.parseCommands("R;M");
+        String response = rover.parseCommands("RM");
         // then
         assertEquals("1:0:E", response);
     }
@@ -222,7 +222,7 @@ public class MarsRoverTest {
         // given
         MarsRover rover = new MarsRover();
         // when
-        String response = rover.parseCommands("M;B");
+        String response = rover.parseCommands("MB");
         // then
         assertEquals("0:0:N", response);
     }
