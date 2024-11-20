@@ -5,21 +5,21 @@ import java.util.Arrays;
 public class MarsRover {
     private Orientation orientation;
     private int xCoord;
-    private int y;
+    private int yCoord;
 
     MarsRover() {
         this.orientation = new NorthOrientation();
         this.xCoord = 0;
-        this.y = 0;
+        this.yCoord = 0;
     }
 
     public int getX() { return xCoord; }
-    public int getY() { return y; }
+    public int getY() { return yCoord; }
     public void setX(int xCoord) { this.xCoord = xCoord; }
-    public void setY(int y) { this.y = y; }
+    public void setY(int y) { this.yCoord = y; }
 
     public String showStatus() {
-        return String.format("%d:%d:%s", xCoord, y, orientation.getDirection());
+        return String.format("%d:%d:%s", xCoord, yCoord, orientation.getDirection());
     }
 
     public void executeCommand(String command) {
